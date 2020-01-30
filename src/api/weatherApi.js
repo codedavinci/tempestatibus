@@ -3,7 +3,7 @@ import format from 'date-fns/format'
 
 import safeGet from '../utils/safeGet'
 
-const GET_ENDPOINT = (place) => `http://api.openweathermap.org/data/2.5/forecast?q=${place},ca&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
+const GET_ENDPOINT = (place) => `https://api.openweathermap.org/data/2.5/forecast?q=${place},ca&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
 
 
 const normalizeForecasts = (forecasts) => {
