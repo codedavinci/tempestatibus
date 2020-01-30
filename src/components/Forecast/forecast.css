@@ -1,0 +1,108 @@
+.grey { color: var(--color-grey) }
+.green {color: var(--color-secondary)}
+.selected { background-color: #d3d3d3}
+
+.fs {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+.fs-lg { font-size: x-large; }
+.fs-md { font-size: medium; }
+.fs-sm { font-size: 12px; }
+.thick { font-weight: 900;}
+.center { text-align: center;}
+.pd-1 { padding: 0 8px;}
+
+
+
+
+.card-container {
+  padding: 0 20px;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.check {
+  border: red 1px solid; 
+}
+.card-heading {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.card-body {
+  display: flex;
+  margin-top: 20px;
+}
+
+.weather-icon-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.weather-icon {
+  width: 180px;
+}
+
+
+
+.degree-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.deg {
+  font-size: 4em;
+  font-weight: 400;
+}
+
+.weather-details {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.days-wrapper  {
+  display: flex;
+  width: 20%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-day {
+  display: flex;
+  flex-direction: column;
+}
+
+.day-box-icon {
+  width: 40px;
+}
+
+.title {
+  color: var(--color-grey) 
+}
+
+.title:hover {
+  cursor: default;
+}
+
+.cities {
+  transition: all 0.35s ease-out;
+}
+.cities:hover {
+  
+  background-color: #CDCDCD;
+}
+.cities.hover ~ .title {
+  color: var(--color-white);
+}
