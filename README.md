@@ -1,68 +1,69 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Notes
+ FUN PROJECT - TEMPESTATIBUS (Stands for weather in latin :) )
+### Date
 
-In the project directory, you can run:
+* Thursday, January 30th, 2020
 
-### `yarn start`
+### Location of deployed application
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* Heroku
+* Link: https://tempestatibus.herokuapp.com/
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Time spent
 
-### `yarn test`
+* 3 Hours
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Assumptions made
 
-### `yarn build`
+- None 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Shortcuts/Compromises made
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- Just added coverage for Canada, because to create a consistent UI with consistency to fetch the right city and country would be preferable with an autocomplete approach such as google weather. The OpenWeatherMap team provides a 25mb JSON with all the countries and its respective `id's`, but I just thought it would stretch to far to create a service to provide this autocomplete feature. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Stretch goals attempted
 
-### `yarn eject`
+- Design Fully Responsive ( All devices )
+- Add Features to Explore Other Cities
+- Deploy (Heroku)
+- Collapsable Sidebar for better experience
+- Top Cities List 
+- Delay Feature (for a better user Experience when fetching)
+- Basic Data Manipulation / Normalization 
+- Git Commit History with support for auto-changelog powered by Commitzen
+- Utilized the `Icons` provided by the API.
+- API_KEY provided through Enviroment Variables
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Instructions to run assignment locally
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Make sure you have node.js and git installed on your machine.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Clone this into your local machine using the terminal (mac) or Gitbash (PC) > git clone [https://github.com/codedavinci/tempestatibus]
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+CD to the folder
 
-## Learn More
+Run > yarn 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Sign up to (OpenWeatherMap)[https://home.openweathermap.org/users/sign_up] to get an `API_KEY`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Add `.env` file to the root of project
 
-### Code Splitting
+add to `.env` your `REACT_APP_WEATHER_API_KEY={YOUR_API_KEY}`
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+yarn start
 
-### Analyzing the Bundle Size
+### What did you not include in your solution that you want us to know about?
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- I'd love to have fully tested all my components and functions, but as I was using a component library, 
+I made a decision to just safeGuard the application with `PropTypes`.
+- I would have wanted to add coverage for Farenheight as well :).
 
-### Making a Progressive Web App
+### Other information about your submission that you feel it's important that we know if applicable.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- No.
 
-### Advanced Configuration
+### Your feedback on this technical challenge
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- This assignment was fun but personally I found this API is pourly designed and not very well documented.
 
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
