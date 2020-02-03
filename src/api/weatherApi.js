@@ -56,7 +56,7 @@ export const fetchForecasts = async (place) => {
   const rawForecasts = await getForecasts(place)
 
   const city = safeGet(['city'], rawForecasts)
-  const normalized = rawForecasts.map(normalizeForecasts)
+  const normalized = rawForecasts.list.map(normalizeForecasts)
   const dedupedForecasts = removeDuplicatesByDate(normalized)
   const nextFiveDaysFromToday = getOnlyNextFiveDays(dedupedForecasts)
 
