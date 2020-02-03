@@ -8,6 +8,8 @@ import { Welcome, ErrorView } from './Common'
 
 import { fetchForecasts } from '../api/weatherApi'
 import delay from '../utils/delay'
+import { celsiusToFarenheit, farenheitToCelsius } from '../utils/degreeConversion'
+import { kmToMiles, milesToKm } from '../utils/lengthConversion'
 
 import './app.css'
 
@@ -21,6 +23,8 @@ function App() {
   const [firstVisited, setFirstVisited] = useState(true)
   const [searchValue, setSearchValue] = useState('')
   const [collapsed, setCollapsed] = useState(false)
+  const [isCelsius, setIsCelsius] = useState(true)
+
   const isMobile = useMediaQuery({ maxWidth: 767 })
 
 
@@ -32,6 +36,47 @@ function App() {
       selectedIndex,
       selected: { ...newSelection }
     }))
+  }
+
+
+
+  const handleToggleTemp = () => {
+
+    const ToFarenheit = (day) => ({
+      ...day,
+      temperature: celsiusToFarenheit(day.temperature),
+      feelsLike: celsiusToFarenheit(day.feelsLike),
+      wind: kmToMiles(day.wind)
+    })
+
+    const ToCelsius = (day) => ({
+      ...day,
+      temperature: farenheitToCelsius(day.temperature),
+      feelsLike: farenheitToCelsius(day.feelsLike),
+      wind: milesToKm(day.wind)
+    })
+
+    setForecasts(prev => {
+
+      let metrics
+
+      if (!isCelsius) {
+        metrics = prev.days.map(ToFarenheit)
+        setDay(item => ({ ...item, selected: ToFarenheit(item.selected) }))
+
+      } else {
+        metrics = prev.days.map(ToCelsius)
+        setDay(item => ({ ...item, selected: ToCelsius(item.selected) }))
+      }
+
+      return {
+        city: prev.city,
+        days: [...metrics]
+      }
+    })
+
+    setIsCelsius(prev => !prev)
+
   }
 
 
@@ -109,6 +154,8 @@ function App() {
       {firstVisited ?
         <Welcome /> :
         <Forecast
+          toggleTemp={handleToggleTemp}
+          isCelsius={isCelsius}
           forecasts={forecasts}
           day={day}
           handleSelectDay={handleSelectDay}

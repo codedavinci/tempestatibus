@@ -3,11 +3,7 @@ import PropTypes from 'prop-types'
 import { Card } from 'antd'
 
 
-
-
-
 const DaysList = ({ days, selectedIndex, handleSelectDay }) => {
-
 
   return (
     <Card className="days-container">

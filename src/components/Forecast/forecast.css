@@ -106,3 +106,21 @@
 .cities.hover ~ .title {
   color: var(--color-white);
 }
+
+.temp-btn {
+  background:none;
+  border:none;
+  color: #2116ad;
+}
+
+.temp-btn:hover:enabled {
+  cursor: pointer;
+}
+
+.temp-btn:disabled {
+  color: var(--color-grey)
+}
+
+.temp-btn:focus {
+  outline: none;
+}

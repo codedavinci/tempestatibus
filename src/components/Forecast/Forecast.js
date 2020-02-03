@@ -17,7 +17,7 @@ let loadingStyles = {
   color: "white",
 }
 
-const Forecast = ({ forecasts, day, handleSelectDay, loading }) => {
+const Forecast = ({ forecasts, day, handleSelectDay, loading, toggleTemp, isCelsius }) => {
 
   const { days, city } = forecasts
   const {
@@ -27,7 +27,7 @@ const Forecast = ({ forecasts, day, handleSelectDay, loading }) => {
     humidity,
     wind,
     date,
-    feelsLike
+    feelsLike,
   } = day.selected
 
 
@@ -50,6 +50,8 @@ const Forecast = ({ forecasts, day, handleSelectDay, loading }) => {
           wind={wind}
           feelsLike={feelsLike}
           description={description}
+          isCelsius={isCelsius}
+          toggleTemp={toggleTemp}
         />
         <DaysList
           days={days}

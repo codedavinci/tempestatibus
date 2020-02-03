@@ -5,6 +5,11 @@ import {
   celsiusToFarenheit
 } from '../degreeConversion'
 
+import {
+  kmToMiles,
+  milesToKm
+} from '../lengthConversion'
+
 import delay from '../delay'
 import safeGet from '../safeGet'
 
@@ -65,5 +70,15 @@ describe('Safely access deep nested object', () => {
   it('should return null when trying to access an non-existent nested prop', () => {
     expect(safeGet(['bar', 0, 'b'], mock)).toBe(null)
     expect(safeGet(['a', 'b', 'c', 'd'], mock)).toBe(null)
+  })
+})
+
+describe('Convert Length', () => {
+  it('should convert km to miles', () => {
+    expect(kmToMiles(14)).toBe(9)
+  })
+
+  it('should convert miles to km', () => {
+    expect(milesToKm(9)).toBe(14)
   })
 })
