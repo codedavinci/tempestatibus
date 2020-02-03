@@ -34,6 +34,9 @@
 - Git Commit History with support for auto-changelog powered by Commitzen
 - Utilized the `Icons` provided by the API.
 - API_KEY provided through Enviroment Variables
+- Metric Conversion / toggle support between Celsius and Farenheit
+- Wind Speed conversion / Between Km and Miles 
+- 100% Unit test coverage.
 
 ### Instructions to run assignment locally
 
@@ -57,7 +60,6 @@ yarn start
 
 - I'd love to have fully tested all my components and functions, but as I was using a component library, 
 I made a decision to just safeGuard the application with `PropTypes`.
-- I would have wanted to add coverage for Farenheight as well :).
 
 ### Other information about your submission that you feel it's important that we know if applicable.
 
@@ -65,5 +67,4 @@ I made a decision to just safeGuard the application with `PropTypes`.
 
 ### Your feedback on this technical challenge
 
-- This assignment was fun but personally I found this API is pourly designed and not very well documented.
-
+- This assignment was fun but personally I found this API was pourly designed and not very well documented.
