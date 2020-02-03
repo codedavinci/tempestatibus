@@ -24,8 +24,7 @@ const WeatherDetails = ({
             disabled={isCelsius}
             onClick={toggleTemp}
           >°C
-            </button>
-          /<button
+            </button>/<button
             className="temp-btn"
             disabled={!isCelsius}
             onClick={toggleTemp}
