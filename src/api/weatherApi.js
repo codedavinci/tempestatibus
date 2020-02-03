@@ -23,7 +23,7 @@ export const normalizeForecasts = (forecast) => {
     icon: GET_ICONS_ENDPOIND(icon),
     temperature: kelvinToCelsius(safeGet(['main', 'temp'], forecast)),
     feelsLike: kelvinToCelsius(safeGet(['main', 'feels_like'], forecast)),
-    wind: safeGet(['wind', 'speed'], forecast),
+    wind: Math.round(safeGet(['wind', 'speed'], forecast)),
     date: formatedDate
   }
 }
